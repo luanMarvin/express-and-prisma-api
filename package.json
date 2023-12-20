@@ -2,10 +2,10 @@
   "name": "express-and-prisma-api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/server.ts",
-    "build": "tsc"
+    "build": "tsc src/server"
   },
   "author": "",
   "license": "ISC",
