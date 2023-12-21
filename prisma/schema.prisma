@@ -35,4 +35,3 @@ model Vote {
   postId  Int
   @@unique([userId, postId])
 }
-
