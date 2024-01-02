@@ -1,20 +1,15 @@
-import { Router, Request, Response } from 'express';
+import { Router } from 'express';
+import { getVote, postVote, putVote } from '../../controllers/vote';
 
 const router = Router();
 
 //Obter informações dos Valores de Likes & Dislikes
-router.get('/', (req: Request, res: Response) => {
-  res.send('Controller here');
-});
+router.get('/', getVote);
 
 //Adiciona Likes/Dislikes
-router.post('/', (req: Request, res: Response) => {
-  res.send('Controller here');
-});
+router.post('/', postVote);
 
 //Substitui Likes & Dislikes
-router.put('/', (req: Request, res: Response) => {
-  res.send('Controller here');
-});
+router.put('/', putVote);
 
 export default router;

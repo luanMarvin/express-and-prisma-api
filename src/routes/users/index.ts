@@ -1,35 +1,24 @@
-import { Router, Request, Response } from 'express';
+import { Router } from 'express';
+import { deleteUsers, getUsers, patchEmailUsers, patchPasswordUsers, patchUsernameUsers, postUsers } from '../../controllers/users';
 
 const router = Router();
 
 //Obter informações do Usuário
-router.get('/', (req: Request, res: Response) => {
-  res.send('Controller here');
-});
+router.get('/', getUsers);
 
 //Criar Um novo Usuário
-router.post('/', (req: Request, res: Response) => {
-  res.send('Controller here');
-});
+router.post('/', postUsers);
 
 //Trocar senha de um Usuário
-router.patch('/update-password', (req: Request, res: Response) => {
-  res.send('Controller here');
-});
+router.patch('/update-password', patchPasswordUsers);
 
 //Trocar email de um Usuário
-router.patch('/update-email', (req: Request, res: Response) => {
-  res.send('Controller here');
-});
+router.patch('/update-email', patchEmailUsers);
 
 //Trocar username de um Usuário
-router.patch('/update-username', (req: Request, res: Response) => {
-  res.send('Controller here');
-});
+router.patch('/update-username', patchUsernameUsers);
 
 //Deleta um Usuário
-router.delete('/', (req: Request, res: Response) => {
-  res.send('Controller here');
-});
+router.delete('/', deleteUsers);
 
 export default router;

@@ -1,25 +1,18 @@
-import { Router, Request, Response } from 'express';
+import { Router } from 'express';
+import { deletePost, getPost, postPost, putPost } from '../../controllers/posts';
 
 const router = Router();
 
 //Obter informações do Post
-router.get('/', (req: Request, res: Response) => {
-  res.send('Controller here');
-});
+router.get('/', getPost);
 
 //Criar Um novo Post
-router.post('/', (req: Request, res: Response) => {
-  res.send('Controller here');
-});
+router.post('/', postPost);
 
 //Trocar username de um Usuário
-router.put('/', (req: Request, res: Response) => {
-  res.send('Controller here');
-});
+router.put('/', putPost);
 
 //Deleta um Post 
-router.delete('/', (req: Request, res: Response) => {
-    res.send('Controller here');
-});
+router.delete('/', deletePost);
 
 export default router;
