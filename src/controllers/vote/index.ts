@@ -1,13 +1,10 @@
 import { Request, Response } from 'express';
-
-export function getVote(req: Request, res: Response) {
-    res.send('Controller here');
-}
+import prisma from '../../database/prisma';
 
 export function postVote(req: Request, res: Response) {
-    res.send('Controller here');
+    //Adiciona o voto em uma postagem.
 }
 
 export function putVote(req: Request, res: Response) {
-    res.send('Controller here');
+    //Muda o voto de uma postagem.
 }

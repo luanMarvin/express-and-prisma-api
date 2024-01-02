@@ -12,6 +12,6 @@
     "resolveJsonModule": true
   },
   "include": ["src/**/*.ts"],
-  "exclude": ["node_modules"],
-  "types": ["@prisma/client"]
+  "exclude": ["node_modules", "dist"],
+  "types": ["@prisma/client", "jest"]
 }
