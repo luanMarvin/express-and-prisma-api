@@ -1,10 +1,13 @@
 import { Router } from 'express';
-import { deletePost, getPost, postPost, putPost } from '../../controllers/posts';
+import { deletePost, getAllPost, getPost, postPost, putPost } from '../../controllers/posts';
 
 const router = Router();
 
 //Obter informações do Post
-router.get('/', getPost);
+router.get('/view-post', getPost);
+
+//Obter informações de todos os Post's
+router.get('/', getAllPost);
 
 //Criar Um novo Post
 router.post('/', postPost);

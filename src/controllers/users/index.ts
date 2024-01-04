@@ -1,12 +1,33 @@
 import { Request, Response } from 'express';
 import prisma from '../../database/prisma';
+import { cryptPass } from '../../middlewares/crypt';
+
+interface CreateNewUser {
+    username: string;
+    password: string;
+    email: string;
+}
 
 export function getUsers(req: Request, res: Response) {
     //Obtem Username e Email, além das postagens feitas.
 }
 
-export function postUsers(req: Request, res: Response) {
+export async function postUsers(req: Request, res: Response) {
     //Adiciona um novo Usuário.
+    try{
+        const data: CreateNewUser = req.body;
+        const hash = await cryptPass(data.password)
+        const user = await prisma.user.create({
+            data: {
+                username: data.username,
+                email: data.email,
+                password: hash
+            }
+        })
+        res.status(201).send('Usuário criado com sucesso.')
+    } catch(error) {
+        res.status(400).send(`Verifique novamente os campos da requisição. Error: ${error}`)
+    }
 }
 
 export function patchPasswordUsers(req: Request, res: Response) {
