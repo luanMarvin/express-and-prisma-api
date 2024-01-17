@@ -5,8 +5,9 @@
   "main": "src/index.ts",
   "scripts": {
     "start": "ts-node-dev src/index.ts",
-    "build": "tsc",
-    "prisma": "npx prisma"
+    "build": "npx prisma generate && npx prisma migrate dev",
+    "prisma": "npx prisma",
+    "generate": "tsc"
   },
   "author": "Luan Marvin",
   "license": "ISC",

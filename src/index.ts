@@ -4,14 +4,19 @@ import bodyParser from 'body-parser';
 import postRoutes from './routes/posts';
 import userRoutes from './routes/users';
 import voteRoutes from './routes/vote';
+import { rootRoute } from './controllers';
 
 const app = express();
 
 app.use(bodyParser.json());
 
+// Rotas API
 app.use('/posts', postRoutes)
 app.use('/users', userRoutes)
 app.use('/vote', voteRoutes)
+
+// Rota Root
+app.use('/', rootRoute)
 
 // Error 404
 app.use((req: Request, res: Response) => {
